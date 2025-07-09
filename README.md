@@ -36,25 +36,24 @@ Para correr el proyecto localmente, necesitas tener instalado:
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/tu-repo.git
-cd tu-repo
+git clone git@github.com:1832Code/SISTEMA_RM.git
 ```
 
 
 
 ```bash
 CREATE DATABASE restaurante_mary;
+```
 3. Configuración y Ejecución del Backend
 3.1 Configurar application.properties
 Dentro de la carpeta del backend:
 
-css
-CopiarEditar
+```bash
 backend/src/main/resources/application.properties
+```
 Coloca tus credenciales de MySQL y configuración del servidor. Ejemplo:
 
-properties
-CopiarEditar
+````bash
 spring.datasource.url=jdbc:mysql://localhost:3306/restaurante_mary
 spring.datasource.username=root
 spring.datasource.password=tu_password
@@ -63,85 +62,77 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 server.port=8080
-Explicación breve de cada propiedad:
+````
+### /*Explicación breve de cada propiedad:*/
 
-spring.datasource.url: URL de conexión a MySQL.
-spring.datasource.username: usuario de MySQL.
-spring.datasource.password: contraseña de MySQL.
-spring.jpa.hibernate.ddl-auto: permite crear/actualizar tablas automáticamente.
-spring.jpa.show-sql: muestra en consola las queries ejecutadas.
-spring.jpa.properties.hibernate.dialect: dialecto SQL usado por Hibernate.
-server.port: puerto donde correrá el backend.
-3.2 Construir y Ejecutar el Backend
-Desde la carpeta raíz del proyecto, ingresa al directorio del backend:
+- spring.datasource.url: URL de conexión a MySQL.
+- spring.datasource.username: usuario de MySQL.
+- spring.datasource.password: contraseña de MySQL.
+- spring.jpa.hibernate.ddl-auto: permite crear/actualizar tablas automáticamente.
+- spring.jpa.show-sql: muestra en consola las queries ejecutadas.
+- spring.jpa.properties.hibernate.dialect: dialecto SQL usado por Hibernate.
+- server.port: puerto donde correrá el backend.
+### 3.2 Construir y Ejecutar el Backend
+-- Desde la carpeta raíz del proyecto, ingresa al directorio del backend:
 
-bash
-CopiarEditar
+
+```bash
 cd backend
+```
 Instala las dependencias y construye el proyecto:
 
-bash
-CopiarEditar
+```bash
 mvn clean install
+```
 Para correr el backend:
 
-bash
-CopiarEditar
+```bash
 mvn spring-boot:run
+```
 ✅ Esto levantará el servidor Spring Boot en:
 
-arduino
-CopiarEditar
+```bash
 http://localhost:8080
+```
 4. Configuración y Ejecución del Frontend
 4.1 Ir al directorio del frontend
 Si estabas en el backend, regresa a la raíz del proyecto:
 
-bash
-CopiarEditar
-cd ../frontend
+
+#### Frontend
+
+```bash
+cd admin
+```
 4.2 Instalar dependencias del frontend
 Si utilizas Bun:
 
-bash
-CopiarEditar
+```bash
 bun install
+```
 Si utilizas npm:
 
-bash
-CopiarEditar
+```bash
 npm install
-4.3 Configurar la URL de la API en Angular
-Para que el frontend consuma datos del backend, edita el archivo:
+```
 
-bash
-CopiarEditar
-frontend/src/environments/environment.ts
-Y coloca la URL de tu backend. Ejemplo:
-
-ts
-CopiarEditar
-export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8080'
-};
 4.4 Levantar el frontend
 Si usas Bun:
 
-bash
-CopiarEditar
+```bash
 bun run start
+```
 Si usas npm:
 
-bash
-CopiarEditar
+```bash
 npm run start
+```
 ✅ Esto levantará el frontend en:
 
-arduino
-CopiarEditar
+```bash
 http://localhost:4200
-✅ Qué Funcionalidades Incluye
+```
+✅ Qué Funcionalidades a implementar
 Con este sistema podrás:
 
 Registrar pedidos de los clientes.
@@ -149,59 +140,11 @@ Consultar y gestionar pedidos existentes.
 Administrar menús y productos.
 Gestionar usuarios y roles mediante Spring Security.
 Disfrutar de una interfaz moderna y responsiva gracias a Angular y Tailwind CSS.
-📁 Estructura Recomendada del Proyecto
-La estructura del backend recomendada es la siguiente:
-
-css
-CopiarEditar
-backend
-└── src
-    └── main
-        └── java
-            └── com
-                └── example
-                    └── myapp
-                        ├── config
-                        ├── controller
-                        ├── dto
-                        ├── entity
-                        ├── exception
-                        ├── repository
-                        ├── security
-                        ├── service
-                        └── util
-Contenido de cada paquete:
-
-config → Configuraciones globales.
-controller → Clases @RestController para manejar endpoints HTTP.
-dto → Data Transfer Objects, para no exponer entidades directamente.
-entity → Entidades JPA mapeadas a tablas MySQL.
-exception → Manejo global de errores.
-repository → Interfaces JPA (extienden JpaRepository).
-security → Configuración de seguridad (Spring Security).
-service → Lógica de negocio.
-util → Clases utilitarias o mappers.
-🙌 Contribuciones
-¡Las contribuciones son bienvenidas! Puedes:
-
-Crear issues para reportar errores o sugerencias.
-Enviar pull requests con mejoras.
+   
 📄 Licencia
 Este proyecto está bajo la licencia MIT.
 ✨ Autor
-[Tu Nombre]
-
+Students de la UTP
 Ingeniero de Sistemas e Informática
 markdown
-CopiarEditar
-
----## ✅ Qué debes personalizar- Reemplaza `https://github.com/tu-usuario/tu-repo.git` con la URL de tu repositorio.- Completa tu nombre en la sección **Autor**.- Coloca tus credenciales reales de MySQL en `application.properties`.- Ajusta la URL de tu API en el `environment.ts` si usas otro puerto o dominio.- Puedes añadir más detalles de tu proyecto (screenshots, diagramas, etc.) si lo deseas.
-
-¡Con esto tienes un README **totalmente integrado**, sin partes sueltas, listo para GitHub y para que cualquiera pueda clonar y correr TODO el proyecto de inicio a fin!
-
-¿Quieres algo más breve, en inglés o con más secciones como diagramas o capturas de pantalla?
-
-
-Preguntar a ChatGPT:damelo en un solo markdown
-```
 > 
